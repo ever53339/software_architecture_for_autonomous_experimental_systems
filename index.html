@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
         }
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 40px auto;
         }
     </style>
@@ -18,17 +18,21 @@
 <body>
     <div class="container">
         <h1>Robotic Platform for Mineral Characterization</h1>
+        <p>Xuan Cao, Yuxin Wu, Michael Whittaker</p>
         <p>A generalized software architecture based on dual-layer action servers facilitates the development of autonomous experimental systems, with an autonomous elemental characterization platform as an example.</p>
 
-        <h2>Overview</h2>
-        <p>This repository contains the source code and documentation for a robotic platform designed for mineral characterization. The platform utilizes a dual-layer action server software architecture, enabling the integration of various analytical instruments and tools.</p>
-
         <h2>Software Architecture</h2>
+
         <p>The software architecture is based on a dual-layer action server design, consisting of:</p>
         <ul>
             <li><b>Socket.IO Action Server</b>: receives requests from Socket.IO clients and handles those requests by calling the device's driver.</li>
             <li><b>ROS Action Server</b>: incorporates a corresponding Socket.IO client and serves as a bridge between ROS action clients and the Socket.IO action server.</li>
         </ul>
+
+        <object data="img/software_architecture.pdf" type="application/pdf" width="100%" height="600">
+            <p>Your browser does not support PDFs.
+                <a href="img/software_architecture.pdf">Download the PDF</a> to view it.</p>
+        </object>
 
         <h2>Repository Structure</h2>
         <p>The repository is organized into the following directories:</p>
