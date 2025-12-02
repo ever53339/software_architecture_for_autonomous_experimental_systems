@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotic Platform for Mineral Characterization</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Robotic Platform for Mineral Characterization</h1>
+        <p>A generalized software architecture based on dual-layer action servers facilitates the development of autonomous experimental systems, with an autonomous elemental characterization platform as an example.</p>
+
+        <h2>Overview</h2>
+        <p>This repository contains the source code and documentation for a robotic platform designed for mineral characterization. The platform utilizes a dual-layer action server software architecture, enabling the integration of various analytical instruments and tools.</p>
+
+        <h2>Software Architecture</h2>
+        <p>The software architecture is based on a dual-layer action server design, consisting of:</p>
+        <ul>
+            <li><b>Socket.IO Action Server</b>: receives requests from Socket.IO clients and handles those requests by calling the device's driver.</li>
+            <li><b>ROS Action Server</b>: incorporates a corresponding Socket.IO client and serves as a bridge between ROS action clients and the Socket.IO action server.</li>
+        </ul>
+
+        <h2>Repository Structure</h2>
+        <p>The repository is organized into the following directories:</p>
+        <ul>
+            <li><b>libs_trigger</b>: contains the source code for the LIBS analyzer's driver and Socket.IO server.</li>
+            <li><b>mini_platform_fe</b>: contains the source code for the front-end interface.</li>
+            <li><b>mini_platform</b>: contains the source code for the ROS action servers and behavior trees.</li>
+            <li><b>LIBZ</b>: contains the source code for automated data reduction.</li>
+        </ul>
+
+        <h2>Getting Started</h2>
+        <p>To get started with the project, follow these steps:</p>
+        <ol>
+            <li>Clone the repository: <code>git clone https://github.com/Living-Minerals-Lab/Robotic_Platform_for_Mineral_Characterization.git</code></li>
+            <li>Install the required dependencies: <code>pip install -r requirements.txt</code></li>
+            <li>Run the Socket.IO server: <code>python libs_trigger/socket_io_server.py</code></li>
+            <li>Run the ROS action server: <code>rosrun mini_platform ros_action_server.py</code></li>
+        </ol>
+
+        <h2>Documentation</h2>
+        <p>The manuscript for this project is available <a href="Robotic_Platform_for_Mineral_Characterization.pdf">here</a>.</p>
+
+        <h2>Contributing</h2>
+        <p>Contributions are welcome! If you'd like to contribute to this project, please fork the repository, make your changes, and submit a pull request.</p>
+
+        <h2>License</h2>
+        <p>This project is licensed under the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+
+        <h2>Authors</h2>
+        <p>X. C., Y. W., M. W.</p>
+
+        <h2>Acknowledgments</h2>
+        <p>This project was supported by [insert funding agency or organization].</p>
+
+        <h2>Related Repositories</h2>
+        <ul>
+            <li><a href="https://github.com/Living-Minerals-Lab/LIBS_trigger">LIBS Trigger</a></li>
+            <li><a href="https://github.com/Living-Minerals-Lab/mini_platform_fe">Mini Platform Front-end</a></li>
+            <li><a href="https://github.com/Living-Minerals-Lab/mini_platform">Mini Platform</a></li>
+            <li><a href="https://github.com/Living-Minerals-Lab/LIBZ">LIBZ</a></li>
+        </ul>
+    </div>
+</body>
+</html>
