@@ -19,20 +19,19 @@
     <div class="container">
         <h1>Robotic Platform for Mineral Characterization</h1>
         <p>Xuan Cao, Yuxin Wu, Michael Whittaker</p>
-        <a href="arxiv link">https://arxiv.org/abs/2509.19541</a>
+        <a href="https://arxiv.org/abs/2509.19541">arxiv link</a>
         
-        <h2>Summary
-            <p>This paper introduces a generalized software architecture based on dual-layer action servers that facilitates the development of autonomous experimental systems, with an autonomous elemental characterization platform as an example.</p>
-            <p>The basic workflow to implement such a system based on this architecture (suppose hardware-level development is already completed and device drivers are available) is as follows:</p>
-            <ol>
-                <li>For each device that would be integrated together, identify the actions that the device would take. For example, in the manuscript, the gantry has only one “move_to” action (moving to a specific location), and the LIBS analyzer has three actions “measure” (collecting LIBS spectra), “export” (exporting collected LIBS spectra to local csv files), and “analyze”.</li>
-                <li>Implement a web-based action server for each device. The servers should be able to handle incoming requests of performing actions identified in the previous step by calling device drivers. The choice of communication protocol for servers is flexible. We used Socket.io in this study, but HTTP or plain Socket would also work. Refer to https://github.com/Living-Minerals-Lab/LIBS_trigger for our implementation of the LIBS analyzer action server. </li>
-                <li>(Optional) Implement a web-based frontend (GUI) to enable convenient manual operations of devices. The fronted would create action clients and send requests to the action servers. There’re many options for the implementation, and we used Vue3 + Typescript. Refer to https://github.com/Living-Minerals-Lab/mini_platform_fe for our implementation of the frontend. </li>
-                <li>Implement ROS/ROS 2 action servers all devices. In our implementation, a ROS/ROS 2 action server doesn’t handle requests directly; it includes a web-based action client and transits ROS/ROS 2 requests to the corresponding web-based action server. ROS/ROS 2 action servers allows the usage of other resources in the ROS/ROS 2 ecosystem and further integration with other ROS/ROS 2 – compatible devices and systems. Refer to https://github.com/Living-Minerals-Lab/mini_platform for our implementation of ROS 2 action servers.</li>
-                <li>Design and implement a behavior tree which enables autonomous task plan and execution. Refer to Behavior Trees in Robotics and AI: An Introduction for more details about behavior trees. Refer to https://github.com/Living-Minerals-Lab/mini_platform for our implementation of behavior trees. </li>
-            </ol>
-        </h2>
-
+        <h2>Summary</h2>
+        <p>This paper introduces a generalized software architecture based on dual-layer action servers that facilitates the development of autonomous experimental systems, with an autonomous elemental characterization platform as an example.</p>
+        <p>The basic workflow to implement such a system based on this architecture (suppose hardware-level development is already completed and device drivers are available) is as follows:</p>
+        <ol>
+            <li>For each device that would be integrated together, identify the actions that the device would take. For example, in the manuscript, the gantry has only one “move_to” action (moving to a specific location), and the LIBS analyzer has three actions “measure” (collecting LIBS spectra), “export” (exporting collected LIBS spectra to local csv files), and “analyze”.</li>
+            <li>Implement a web-based action server for each device. The servers should be able to handle incoming requests of performing actions identified in the previous step by calling device drivers. The choice of communication protocol for servers is flexible. We used Socket.io in this study, but HTTP or plain Socket would also work. Refer to https://github.com/Living-Minerals-Lab/LIBS_trigger for our implementation of the LIBS analyzer action server. </li>
+            <li>(Optional) Implement a web-based frontend (GUI) to enable convenient manual operations of devices. The fronted would create action clients and send requests to the action servers. There’re many options for the implementation, and we used Vue3 + Typescript. Refer to https://github.com/Living-Minerals-Lab/mini_platform_fe for our implementation of the frontend. </li>
+            <li>Implement ROS/ROS 2 action servers all devices. In our implementation, a ROS/ROS 2 action server doesn’t handle requests directly; it includes a web-based action client and transits ROS/ROS 2 requests to the corresponding web-based action server. ROS/ROS 2 action servers allows the usage of other resources in the ROS/ROS 2 ecosystem and further integration with other ROS/ROS 2 – compatible devices and systems. Refer to https://github.com/Living-Minerals-Lab/mini_platform for our implementation of ROS 2 action servers.</li>
+            <li>Design and implement a behavior tree which enables autonomous task plan and execution. Refer to Behavior Trees in Robotics and AI: An Introduction for more details about behavior trees. Refer to https://github.com/Living-Minerals-Lab/mini_platform for our implementation of behavior trees. </li>
+        </ol>
+        
         <h2>Software Architecture</h2>
 
         <p>The software architecture is based on a dual-layer action server design, consisting of:</p>
@@ -48,7 +47,7 @@
         <p>The main body of the platform is a gantry system used in CNC machining.</p>
         <p>An analytical instrument is mounted to the gantry head and approaches samples placed on the working area and perform measurements.</p>
         <p>A stereo depth camera (ZED 2i, StereoLabs) is used to provide the gantry with visual information of samples.</p>
-        <img src="img/platform_overview.png" alt="Platform Overview" class="img-fluid mb-4" style="max-width:100%; height:auto;">
+        <img src="img/platform.png" alt="Platform Overview" class="img-fluid mb-4" style="max-width:100%; height:auto;">
 
         <h2>Demonstration</h2>
         <p>A dense LIBS scan of a sample surface using the developed platform is demonstrated. This is a particularly useful technique for materials containing lithium, such as the spodumene-bearing pegmatite core sample.</p>
